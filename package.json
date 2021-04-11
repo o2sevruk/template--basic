@@ -1,0 +1,36 @@
+{
+  "name": "{name}",
+  "version": "1.0.0",
+  "description": "{description}",
+  "private": true,
+  "scripts": {
+    "lint": "eslint && prettier --write .",
+    "lint:prettier": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/o2sevruk/{name}"
+  },
+  "author": "o2sevruk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/o2sevruk/{name}/issues"
+  },
+  "homepage": "https://github.com/o2sevruk/{name}#readme",
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,html,md}": "prettier --write ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
